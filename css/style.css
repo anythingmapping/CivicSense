@@ -1,0 +1,20 @@
+/* layout */
+
+#header {
+  height:75px;
+  background-color: #337ab7;
+  color: white;
+}
+
+#mapdiv{
+  height: 100vh;
+}
+
+#footer {
+  background-color: darkgrey;
+  min-height: 40px;
+  bottom: 20%;
+}
+.itemSelect {
+  margin-bottom: 5px;
+}

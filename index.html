@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title id="client-title">James Farm</title>
+    <!-- LOADING KRESKOS BASE -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="src/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="src/leaflet.css">
+
+
+
+
+
+    <!-- LOADING EXTERNAL DEV WORK -->
+    <!-- <script src="src/leaflet.ajax.min.js"></script> -->
+    <script src="src/leaflet.js"></script>
+    <script src="src/turf.min.js"></script>
+    <script src="src/jquery-3.2.1.min.js"></script>
+
+
+    <!-- Leaflet CDN -->
+    <!-- <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script> -->
+    <!-- Loading 3rd party scripts -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.js"></script> -->
+    <!-- <script src="js/leaflet.ajax.min.js"></script>
+    <script src="js/turf.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+
+    <script src="src/plugins/leaflet-opencage/js/L.Control.OpenCageSearch.js"></script>
+    <link rel="stylesheet" href="src/plugins/leaflet-opencage/css/L.Control.OpenCageSearch.css">
+
+    <!-- LOADING PLUGINS -->
+    
+    <script src="src/plugins/L.Control.MousePosition.js"></script>
+    <link rel="stylesheet" href="src/plugins/L.Control.MousePosition.css">
+    <script src="src/plugins/Leaflet.PolylineMeasure.js"></script>
+    <link rel="stylesheet" href="src/plugins/Leaflet.PolylineMeasure.css">
+    <script src="src/plugins/easy-button.js"></script>
+    <link rel="stylesheet" href="src/plugins/easy-button.css">
+    <script src="src/plugins/easy-button.js"></script>
+    <link rel="stylesheet" href="src/plugins/easy-button.css">
+    <script src="src/plugins/L.Control.Sidebar.js"></script>
+    <link rel="stylesheet" href="src/plugins/L.Control.Sidebar.css">
+    <script src="src/plugins/leaflet-opencage/js/L.Control.OpenCageSearch.js"></script>
+    <link rel="stylesheet" href="src/plugins/leaflet-opencage/css/L.Control.OpenCageSearch.css">
+    <script src="src/plugins/leaflet-providers.js"></script>
+
+
+
+
+    <!-- LOADING PLUGINS EXTENDED FOR EXCESSIVE DRAWING LINKS-->
+    <!--    ***************  Begin Leaflet.Draw-->
+    <script src="src/plugins/leaflet-draw/Leaflet.draw.js"></script>
+    <script src="src/plugins/leaflet-draw/Leaflet.Draw.Event.js"></script>
+    <link rel="stylesheet" href="src/plugins/leaflet-draw/leaflet.draw.css"/>
+
+    <script src="src/plugins/leaflet-draw/Toolbar.js"></script>
+    <script src="src/plugins/leaflet-draw/Tooltip.js"></script>
+
+    <script src="src/plugins/leaflet-draw/ext/GeometryUtil.js"></script>
+    <script src="src/plugins/leaflet-draw/ext/LatLngUtil.js"></script>
+    <script src="src/plugins/leaflet-draw/ext/LineUtil.Intersect.js"></script>
+    <script src="src/plugins/leaflet-draw/ext/Polygon.Intersect.js"></script>
+    <script src="src/plugins/leaflet-draw/ext/Polyline.Intersect.js"></script>
+    <script src="src/plugins/leaflet-draw/ext/TouchEvents.js"></script>
+
+    <script src="src/plugins/leaflet-draw/draw/DrawToolbar.js"></script>
+    <script src="src/plugins/leaflet-draw/draw/handler/Draw.Feature.js"></script>
+    <script src="src/plugins/leaflet-draw/draw/handler/Draw.SimpleShape.js"></script>
+    <script src="src/plugins/leaflet-draw/draw/handler/Draw.Polyline.js"></script>
+    <script src="src/plugins/leaflet-draw/draw/handler/Draw.Circle.js"></script>
+    <script src="src/plugins/leaflet-draw/draw/handler/Draw.Marker.js"></script>
+    <script src="src/plugins/leaflet-draw/draw/handler/Draw.Polygon.js"></script>
+    <script src="src/plugins/leaflet-draw/draw/handler/Draw.Rectangle.js"></script>
+
+
+    <script src="src/plugins/leaflet-draw/edit/EditToolbar.js"></script>
+    <script src="src/plugins/leaflet-draw/edit/handler/EditToolbar.Edit.js"></script>
+    <script src="src/plugins/leaflet-draw/edit/handler/EditToolbar.Delete.js"></script>
+
+    <script src="src/plugins/leaflet-draw/Control.Draw.js"></script>
+
+    <script src="src/plugins/leaflet-draw/edit/handler/Edit.Poly.js"></script>
+    <script src="src/plugins/leaflet-draw/edit/handler/Edit.SimpleShape.js"></script>
+    <script src="src/plugins/leaflet-draw/edit/handler/Edit.Circle.js"></script>
+    <script src="src/plugins/leaflet-draw/edit/handler/Edit.Rectangle.js"></script>
+    <script src="src/plugins/leaflet-draw/edit/handler/Edit.Marker.js"></script>
+    <!--    **************  End of Lealet Draw-->
+
+  </head>
+
+  <body>
+    <!-- header -->
+    <div id="header" class="col-md-12" >
+      <img src="img/klogo.png" id="client-brand" alt="James Farm" style="height:75px; float:left;">
+      <h1 id="client-name" class="text-left"> James Farm </h1>
+    </div>
+
+    <!-- THE SIDE PANEL -->
+    <div id="side-bar" class="col-md-2">
+      <h1 class="text-center">User Options</h1>
+      <button id="zoomTo" class="form-control btn-primary itemSelect"> Zoom to Bertrude</button>
+      <button id="btnLocate" class="form-control btn-success itemSelect">Locate</button>
+      <button id="btnBuffer" class="form-control btn-warning itemSelect">Buffer</button>
+      <button id="sensor" class="form-control btn-info itemSelect">Load Sensors</button>
+      <button id="temp" class="form-control btn-warning itemSelect">temp test</button>
+      <button id="btnFarm" class="form-control btn-warning itemSelect">zoom btnFarm</button>
+      <button id="btnAddfgp" class="form-control btn-warning itemSelect">btnAddfgp</button>
+      <button id="btnLineFarm" class="form-control btn-warning itemSelect">zoom btnLineFarm</button>
+      <h4> Zoom Level: <span id='zoom-level'></span></h4>
+      <h4> Map Center: <span id='map-center'></span></h4>
+      <h4> Mouse Location: <span id='mouse-location'></span></h4>
+      <h4> Image Opacity: <span id='image-opacity'>0.5</span></h4>
+      <input type='range' id='sldOpacity' min='0' max='1' step='0.1' value='0.5'>
+
+
+      <!-- DC CONTAINER -->
+      <div>
+        <center><h2>Graphic:</h2></center>
+        <br>
+        <!-- A div anchor that can be identified by id -->
+        <div id="piechart" class="dc-chart">
+          <!-- Title or anything you want to add above the chart -->
+          <strong>Pie Chart</strong>
+          <!--
+            This will create a reset button when ever the user selects a filter.
+            Clicking on the reset button will remove all filters.
+           -->
+          <a class="reset" href="javascript:RowChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+          <div class="clearfix"></div>
+          <!--
+            dc.js will also automatically inject applied current filter value into
+            any html element with css class set to "filter"
+          -->
+          <span class="reset" style="display: none;">Current filter: <span class="filter"></span></span>
+          <br>
+          </br>
+        </div>
+      </div>
+      <!-- dc end -->
+
+
+    </div>
+
+    <!-- MAP -->
+    <div id="mapdiv" class="col-md-12 kreskosmap"></div>
+
+
+    <!-- Footer -->
+    <!-- <div id="footer" class="col-md-12">
+      <h4 id="map_coords" class="text-center">Latitude:19.4 Longitude:-99.1 Zoom Level: 20</h4>
+      <h4 class="text-center">&copy;2017 <a href="www.kreskos.co.nz">Kreskos Innovation Ltd</a></h4>
+    </div> -->
+  </body>
+
+<!-- Kreskos scripts -->
+<script src="js/base.js"></script>
+<!-- <script src="js/telemetry.js"></script> -->
+<!-- <script src="js/analyticsModule.js"></script> -->
+
+</html>

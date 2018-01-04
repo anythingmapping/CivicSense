@@ -1,0 +1,3 @@
+var sensorList = [['Lucas', '72e306f5-f465-4498-b235-d754721eb9d1'],
+                  ['Alan', '52a5a888-b381-4882-8f59-1aef0dd8df49'],
+                  ['Tobin', 'f2a8b351-6698-49fc-9e6f-71525711f9f5']];

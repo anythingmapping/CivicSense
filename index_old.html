@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Civic Sense</title>
+
+    <link rel="stylesheet" href="src/leaflet.css">
+    <link rel="stylesheet" href="src/css/bootstrap.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="src/leaflet.js"></script>
+    <script src="src/jquery-3.2.1.min.js"></script>
+
+
+    <!-- Leaflet CDN -->
+    <!-- <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script> -->
+    <!-- Load Esri Leaflet from CDN -->
+    <!-- <script src="https://unpkg.com/esri-leaflet@2.0.8"></script> -->
+    <!-- Loading 3rd party scripts -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.js"></script> -->
+    <!-- <script src="js/leaflet.ajax.min.js"></script>
+    <script src="js/turf.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  </head>
+
+
+  <body>
+    <div id="header" class="col-md-12">
+      <h1 class="text-center">Kreskos Product Brand</h1>
+    </div>
+
+    <!-- THE SIDE PANEL -->
+    <div id="side_panel" class="col-md-2">
+      <h1 class="text-center">User Options</h1>
+      <button id="zoomTo" class="form-control btn-primary itemSelect"> Zoom to Bertrude</button>
+      <button id="btnBuffer" class="form-control btn-warning itemSelect">Buffer</button>
+      <button id="sensor" class="form-control btn-primary itemSelect">Load Sensors</button>
+      <button id="temp" class="form-control btn-warning itemSelect">temp test</button>
+    </div>
+
+    <div id="mapdiv" class="col-md-9"></div>
+
+    <div id="footer" class="col-md-12">
+      <h4 id="map_coords" class="text-center">Latitude:19.4 Longitude:-99.1 Zoom Level: 20</h4>
+      <h4 class="text-center">&copy;2017 <a href="www.kreskos.co.nz">Kreskos Innovation Ltd</a></h4>
+    </div>
+  </body>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.js"></script> -->
+<script src="js/setupModule.js"></script>
+<script src="js/analyticsModule.js"></script>
+
+
+
+</html>
